@@ -126,7 +126,7 @@ body_html = '''
                 border-radius: 20px;
             }}
             hr.heavy {{
-                border-width: 3px 0 0 0;
+                border-width: 2px 0 0 0;
                 width: 80%;
             }}
         </style>
@@ -349,13 +349,13 @@ def application(environ, start_response):
     elif method == 'GET':
         fname = '{0}{1}'.format(cwd, path)
 
-        if path == '/':
-            content_type = 'text/html; charset=utf-8'
-            data = index(base_url)
-        elif path != '/db.sqlite3' and os.path.isfile(fname):
+        if path != '/db.sqlite3' and os.path.isfile(fname):
             content_type = mimetypes.guess_type(fname)
             with open(fname, 'r') as fh:
                 data = fh.read()
+        elif path == '/':
+            content_type = 'text/html; charset=utf-8'
+            data = index(base_url)
         else:
             content_type = 'text/html; charset=utf-8'
             data = get_award(path[1:], base_url)
