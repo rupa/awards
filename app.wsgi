@@ -59,9 +59,9 @@ body_html = '''
             rel='stylesheet'
             type='text/css'>
         <link
-             href='http://fonts.googleapis.com/css?family=UnifrakturMaguntia'
-             rel='stylesheet'
-             type='text/css'
+            href='http://fonts.googleapis.com/css?family=UnifrakturMaguntia'
+            rel='stylesheet'
+            type='text/css'
         >
         <style>
             a {{
